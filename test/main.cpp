@@ -560,7 +560,7 @@ void k() {
 		mov dword ptr[temp + 16], 0x41357a45
 	}
 	printf("%s", temp);
-	exit(0);
+	while (1);
 }
 
 DWORD64 X64Call2(DWORD64 func, int argC, ...)
@@ -714,11 +714,11 @@ void e() {
 	printf("\n");
 
 	int c = 0;
-	std::cout << "確認します\n";
+	std::cout << "check your pass...\n";
 	for (int i = 0; i < 20; i++) {
 		c += (digest[i] - (*(BYTE*)((DWORD)&s + i)));
 		if (digest[i] != (*(BYTE*)((DWORD)&s + i))) {
-			printf("違うよ\n");
+			printf("Wrong\n");
 			exit(0);
 		}
 	}
@@ -729,7 +729,7 @@ void d() {
 		__asm {
 			EM(0xCC)
 		}
-		std::cout << "デバッグ検知";
+		std::cout << "debugger detected";
 		exit(0);
 	}
 	__except (EXCEPTION_EXECUTE_HANDLER) {
@@ -744,7 +744,7 @@ void c() {
 			INT 0x2D
 			nop
 		}
-		std::cout << "デバッグ検知";
+		std::cout << "debugger detected";
 		exit(0);
 	}
 	__except (EXCEPTION_EXECUTE_HANDLER) {
@@ -755,7 +755,7 @@ void c() {
 void a() {
 	__try {
 		EM(0xF1);
-		std::cout << "デバッグ検知";
+		std::cout << "debugger detected";
 		exit(0);
 	}
 	__except (EXCEPTION_EXECUTE_HANDLER) {
